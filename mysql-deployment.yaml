@@ -22,6 +22,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
+  storageClassName: ''
   resources:
     requests:
       storage: 20Gi
@@ -46,7 +47,7 @@ spec:
         tier: mysql
     spec:
       containers:
-        - image: mysql:5.6
+        - image: docker.io/ibmcom/mysql-s390x
           name: mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
